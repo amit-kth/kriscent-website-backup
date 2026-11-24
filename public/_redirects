@@ -1,0 +1,3 @@
+
+# public/_redirects
+/blog/*  https://kriscent.in/blog/:splat  302

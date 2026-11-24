@@ -1,0 +1,28 @@
+User-agent: *
+Disallow: /cgi-bin/
+
+User-agent: Googlebot
+Disallow:
+
+User-agent: GPTBot
+Disallow:
+
+User-agent: ChatGPT-User
+Disallow:
+
+User-agent: ClaudeBot
+Disallow:
+
+User-agent: Claude-Web
+Disallow:
+
+User-agent: PerplexityBot
+Disallow:
+
+User-agent: Google-Extended
+Disallow:
+
+User-agent: CCBot
+Disallow:
+
+Sitemap: https://kriscent.in/sitemap.xml

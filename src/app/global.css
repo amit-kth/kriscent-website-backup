@@ -1,0 +1,595 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+
+  @media (width >=--theme(--breakpoint-sm)) {
+    max-width: none;
+  }
+
+  @media (width >=1400px) {
+    max-width: 1400px;
+  }
+}
+
+
+@layer base {
+  :root {
+    --background: oklch(98.42% 0.0034 247.86);
+    --foreground: oklch(13.23% 0.0756 277.93);
+    --card: oklch(100% 0 0);
+    --card-foreground: oklch(13.23% 0.0756 277.93);
+    --popover: oklch(100% 0 0);
+    --popover-foreground: oklch(13.23% 0.0756 277.93);
+    --primary: oklch(49.03% 0.2158 264.38);
+    --primary-foreground: oklch(98.42% 0.0034 247.86);
+    --secondary: oklch(94.00% 0.0150 260.03);
+    --secondary-foreground: oklch(27.95% 0.0368 260.03);
+    --muted: oklch(95.50% 0.0100 260.03);
+    --muted-foreground: oklch(45.00% 0.0300 264.38);
+    --accent: oklch(90.00% 0.0500 264.38);
+    --accent-foreground: oklch(27.95% 0.0368 260.03);
+    --destructive: oklch(63.68% 0.2078 25.33);
+    --destructive-foreground: oklch(98.42% 0.0034 247.86);
+    --border: oklch(90.00% 0.0150 260.03);
+    --input: oklch(100% 0 0);
+    --ring: oklch(49.03% 0.2158 264.38);
+    --chart-1: oklch(49.03% 0.2158 264.38);
+    --chart-2: oklch(27.95% 0.0368 260.03);
+    --chart-3: oklch(63.68% 0.2078 25.33);
+    --chart-4: oklch(13.23% 0.0756 277.93);
+    --chart-5: oklch(70.00% 0.0300 264.38);
+    --radius: 0.75rem;
+    --sidebar: oklch(100% 0 0);
+    --sidebar-foreground: oklch(13.23% 0.0756 277.93);
+    --sidebar-primary: oklch(49.03% 0.2158 264.38);
+    --sidebar-primary-foreground: oklch(98.42% 0.0034 247.86);
+    --sidebar-accent: oklch(95.50% 0.0100 260.03);
+    --sidebar-accent-foreground: oklch(13.23% 0.0756 277.93);
+    --sidebar-border: oklch(90.00% 0.0150 260.03);
+    --sidebar-ring: oklch(49.03% 0.2158 264.38);
+  }
+
+  .dark {
+    --background: oklch(13.23% 0.0756 277.93);
+    --foreground: oklch(98.42% 0.0034 247.86);
+    --card: oklch(27.95% 0.0368 260.03);
+    --card-foreground: oklch(98.42% 0.0034 247.86);
+    --popover: oklch(27.95% 0.0368 260.03);
+    --popover-foreground: oklch(98.42% 0.0034 247.86);
+    --primary: oklch(60.00% 0.2100 264.38);
+    --primary-foreground: oklch(98.42% 0.0034 247.86);
+    --secondary: oklch(27.95% 0.0368 260.03);
+    --secondary-foreground: oklch(98.42% 0.0034 247.86);
+    --muted: oklch(24.00% 0.0300 265.00);
+    --muted-foreground: oklch(70.00% 0.0300 264.38);
+    --accent: oklch(35.00% 0.0700 264.38);
+    --accent-foreground: oklch(98.42% 0.0034 247.86);
+    --destructive: oklch(63.68% 0.2078 25.33);
+    --destructive-foreground: oklch(98.42% 0.0034 247.86);
+    --border: oklch(30.00% 0.0300 265.00);
+    --input: oklch(27.95% 0.0368 260.03);
+    --ring: oklch(60.00% 0.2100 264.38);
+    --chart-1: oklch(60.00% 0.2100 264.38);
+    --chart-2: oklch(80.00% 0.0200 260.03);
+    --chart-3: oklch(63.68% 0.2078 25.33);
+    --chart-4: oklch(98.42% 0.0034 247.86);
+    --chart-5: oklch(50.00% 0.0300 264.38);
+    --radius: 0.75rem;
+    --sidebar: oklch(20.00% 0.0500 270.00);
+    --sidebar-foreground: oklch(98.42% 0.0034 247.86);
+    --sidebar-primary: oklch(60.00% 0.2100 264.38);
+    --sidebar-primary-foreground: oklch(98.42% 0.0034 247.86);
+    --sidebar-accent: oklch(35.00% 0.0700 264.38);
+    --sidebar-accent-foreground: oklch(98.42% 0.0034 247.86);
+    --sidebar-border: oklch(30.00% 0.0300 265.00);
+    --sidebar-ring: oklch(60.00% 0.2100 264.38);
+  }
+}
+
+@theme {
+  /* shadcn tokens , mapped directly to the OKLCH variables below.
+     FIXED from the old file: those wrapped each token in hsl(var(--x)),
+     but the :root values are full oklch(...) colors, not raw H S L numbers.
+     hsl(oklch(...)) is invalid CSS and silently broke every one of these. */
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --text-tertiaryHeadingFontSize: 24px;
+  --text-paragraphFontSizeMobile: 16px;
+  --text-paragraphFontSizeDesktop: 18px;
+
+  --font-weight-tertiaryHeadingFontWeight: 700;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+  --animate-meteor: meteor 5s linear infinite;
+  --animate-scroll: scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite;
+  --animate-shiny-text: shiny-text 8s infinite;
+  --animate-pulse: pulse var(--duration) ease-out infinite;
+  --animate-shine: shine var(--duration) infinite linear;
+  --animate-marquee: marquee 10s linear infinite;
+  --animate-first: moveVertical 30s ease infinite;
+  --animate-second: moveInCircle 20s reverse infinite;
+  --animate-third: moveInCircle 40s linear infinite;
+  --animate-fourth: moveHorizontal 40s ease infinite;
+  --animate-fifth: moveInCircle 20s ease infinite;
+  --animate-background-gradient: background-gradient var(--background-gradient-speed, 15s) cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;
+
+  --transition-duration-2000: 2000ms;
+
+  @keyframes shiny-text {
+
+    0%,
+    90%,
+    100% {
+      background-position: calc(-100% - var(--shimmer-width)) 0;
+    }
+
+    30%,
+    60% {
+      background-position: calc(100% + var(--shimmer-width)) 0;
+    }
+  }
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+
+    to {
+      height: 0;
+    }
+  }
+
+  @keyframes meteor {
+    0% {
+      transform: rotate(215deg) translateX(0);
+      opacity: 1;
+    }
+
+    70% {
+      opacity: 1;
+    }
+
+    100% {
+      transform: rotate(215deg) translateX(-500px);
+      opacity: 0;
+    }
+  }
+
+  @keyframes scroll {
+    to {
+      transform: translate(calc(-50% - 0.5rem));
+    }
+  }
+
+  @keyframes pulse {
+
+    0%,
+    100% {
+      box-shadow: 0 0 0 0 var(--pulse-color);
+    }
+
+    50% {
+      box-shadow: 0 0 0 8px var(--pulse-color);
+    }
+  }
+
+  @keyframes shine {
+    0% {
+      background-position: 0% 0%;
+    }
+
+    50% {
+      background-position: 100% 100%;
+    }
+
+    to {
+      background-position: 0% 0%;
+    }
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+
+    100% {
+      transform: translateX(-33.33%);
+    }
+  }
+
+  @keyframes moveHorizontal {
+    0% {
+      transform: translateX(-50%) translateY(-10%);
+    }
+
+    50% {
+      transform: translateX(50%) translateY(10%);
+    }
+
+    100% {
+      transform: translateX(-50%) translateY(-10%);
+    }
+  }
+
+  @keyframes moveInCircle {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    50% {
+      transform: rotate(180deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes moveVertical {
+    0% {
+      transform: translateY(-50%);
+    }
+
+    50% {
+      transform: translateY(50%);
+    }
+
+    100% {
+      transform: translateY(-50%);
+    }
+  }
+}
+
+@keyframes background-gradient {
+
+  0%,
+  100% {
+    transform: translate(0, 0);
+    animation-delay: var(--background-gradient-delay, 0s);
+  }
+
+  20% {
+    transform: translate(calc(100% * var(--tx-1, 1)), calc(100% * var(--ty-1, 1)));
+  }
+
+  40% {
+    transform: translate(calc(100% * var(--tx-2, -1)), calc(100% * var(--ty-2, 1)));
+  }
+
+  60% {
+    transform: translate(calc(100% * var(--tx-3, 1)), calc(100% * var(--ty-3, -1)));
+  }
+
+  80% {
+    transform: translate(calc(100% * var(--tx-4, -1)), calc(100% * var(--ty-4, -1)));
+  }
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-border, currentcolor);
+  }
+}
+
+@utility no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@layer utilities {
+  body {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    /* Optional: Prevents image dragging */
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+  }
+}
+
+@layer base {
+  .universal-paragraph-desktop {
+    @apply font-[20px] text-muted-foreground
+  }
+
+  .universal-paragraph-mobiles {
+    @apply font-[20px] text-muted-foreground
+  }
+
+  * {
+    @apply border-border m-0 p-0;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+  }
+}
+
+body {
+  overflow-x: hidden !important;
+  /* Prevent horizontal scrolling */
+}
+
+
+/* width */
+
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+
+/* Track */
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 10px;
+}
+
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
+
+@keyframes scroll-vertical {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(calc(-50% - 1rem));
+  }
+}
+
+@keyframes float-up-down {
+
+  0%,
+  100% {
+    transform: translateY(0) translateX(-50%);
+  }
+
+  50% {
+    transform: translateY(-20px) translateX(-50%);
+  }
+}
+
+.animate-scroll-vertical {
+  animation: scroll-vertical var(--animation-duration) var(--animation-direction) linear infinite;
+}
+
+
+/* some custom classes in order to remove the inline styles for making seo better.  */
+
+.star-color-clutch {
+  color: #16313A;
+}
+
+.star-color-google {
+  color: #F6AD01;
+}
+
+.star-color-ambition {
+  color: #5670FB;
+}
+
+.star-color-glassdoor {
+  color: #0CAA41;
+}
+
+.star-color-meta {
+  color: #0174f1;
+}
+
+.star-color-justdial {
+  color: #f36e22;
+}
+
+.flipcardBase {
+  transform-style: preserve-3d;
+  perspective: 1000;
+}
+
+.flicard-back {
+  backface-visibility: hidden;
+}
+
+.rotateXzero {
+  transform: rotateX(0deg);
+}
+
+.rotateYzero {
+  transform: rotateY(0deg);
+}
+
+
+/* Add this class to set background color using CSS variable */
+
+.bg-project-card-color {
+  background-color: var(--card-color);
+}
+
+.highlighted {
+  color: var(--color-primary);
+  /* Default color */
+}
+
+.scale-animation {
+  transform-origin: 0%;
+  transition: transform 0.5s ease-in-out;
+  /* Adjust duration and easing as needed */
+}
+
+
+/* styles.css or relevant CSS file */
+
+.drop-shadow-custom {
+  filter: drop-shadow(0 4px 3px rgba(0, 0, 0, 0.07)) drop-shadow(0 2px 2px rgba(0, 0, 0, 0.06));
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-rotate {
+  animation: rotate 15s linear infinite;
+  /* Adjust duration as needed */
+}
+
+@keyframes heartbeat {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.5);
+  }
+}
+
+.animate-heartbeat {
+  animation: heartbeat 5s ease-in-out infinite;
+}
+
+/* globals.css , add these marquee animations */
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-reverse {
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.marquee {
+  animation: marquee 40s linear infinite;
+}
+
+.marquee-reverse {
+  animation: marquee-reverse 40s linear infinite;
+}
+
+/* Pause on hover */
+.marquee:hover,
+.marquee-reverse:hover {
+  animation-play-state: paused;
+}
+
+@keyframes menu-card-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

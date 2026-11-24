@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://www.kriscent.in/</loc>
+        <priority>1.0</priority>
+    </url>
+    
+    <!-- Second Priority Pages (0.9) -->
+    <url>
+        <loc>https://www.kriscent.in/hire-talent</loc>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://www.kriscent.in/services</loc>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://www.kriscent.in/portfolio</loc>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://www.kriscent.in/about</loc>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://www.kriscent.in/connect</loc>
+        <priority>0.85</priority>
+    </url>
+    <url>
+        <loc>https://www.kriscent.in/career</loc>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- Third Priority Pages (0.7) -->
+    <url>
+        <loc>https://www.kriscent.in/awards</loc>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.kriscent.in/our-culture</loc>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.kriscent.in/clients</loc>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.kriscent.in/contact</loc>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- Remaining pages with priority 0.7 -->
+    <url><loc>https://www.kriscent.in/ai-solutions</loc><priority>0.7</priority></url>
+    <url><loc>https://www.kriscent.in/ai-solutions/ai-calling-agent</loc><priority>0.7</priority></url>
+    <url><loc>https://www.kriscent.in/app-solutions</loc><priority>0.7</priority></url>
+    <url><loc>https://www.kriscent.in/case-study-auraquestt</loc><priority>0.7</priority></url>
+    <url><loc>https://www.kriscent.in/case-study-flixmates</loc><priority>0.7</priority></url>
+    <url><loc>https://www.kriscent.in/case-study-gudz</loc><priority>0.7</priority></url>
+    <url><loc>https://www.kriscent.in/case-study-paras-travels</loc><priority>0.7</priority></url>
+    <url><loc>https://www.kriscent.in/case-study-rgcsm</loc><priority>0.7</priority></url>
+    <url><loc>https://www.kriscent.in/case-study-chabi</loc><priority>0.7</priority></url>
+    <url><loc>https://www.kriscent.in/case-study-medisaver</loc><priority>0.7</priority></url>
+    <url><loc>https://www.kriscent.in/case-study-tsbos</loc><priority>0.7</priority></url>
+    <url><loc>https://www.kriscent.in/case-study-shop-ad</loc><priority>0.7</priority></url>
+    <url><loc>https://www.kriscent.in/consultancy</loc><priority>0.7</priority></url>
+    <url><loc>https://www.kriscent.in/design-services</loc><priority>0.7</priority></url>
+    <url><loc>https://www.kriscent.in/digital-marketing</loc><priority>0.7</priority></url>
+    <url><loc>https://www.kriscent.in/data-analysis</loc><priority>0.7</priority></url>
+    <url><loc>https://www.kriscent.in/faq</loc><priority>0.7</priority></url>
+    <url><loc>https://www.kriscent.in/game-development</loc><priority>0.7</priority></url>
+    <url><loc>https://www.kriscent.in/kirp</loc><priority>0.7</priority></url>
+    <url><loc>https://www.kriscent.in/technologies</loc><priority>0.7</priority></url>
+    <url><loc>https://www.kriscent.in/terms-conditions</loc><priority>0.7</priority></url>
+    <url><loc>https://www.kriscent.in/testimonials</loc><priority>0.7</priority></url>
+    <url><loc>https://www.kriscent.in/web-solutions</loc><priority>0.7</priority></url>
+</urlset>
