@@ -165,7 +165,9 @@ const Hero = () => {
                         ].join(" ")}
                     >
                         Empowering Fortune-scale companies across Healthcare, Finance,
-                        Manufacturing &amp; Logistics to scale through AI-driven innovation.
+                        Manufacturing &amp; Logistics to scale through AI-driven innovation —
+                        spanning web &amp; app development, software engineering, digital
+                        marketing, and AI/ML solutions.
                     </motion.p>
 
                     <motion.div
