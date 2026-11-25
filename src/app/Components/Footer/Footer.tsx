@@ -107,7 +107,9 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer className="relative z-50 flex w-full justify-center rounded-t-[34px] bg-foreground">
+    <footer className="relative z-50 flex w-full justify-center overflow-hidden rounded-t-[34px] bg-foreground">
+      {/* primary glow rising from the bottom */}
+      <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 h-48 bg-[radial-gradient(ellipse_at_bottom,rgba(var(--primary),0.18),transparent_70%)]" />
       <div aria-hidden="true" className="absolute left-1/2 top-0 h-px w-full -translate-x-1/2 bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
 
       <div className="container">
@@ -134,6 +136,16 @@ export default function Footer() {
               a leading provider of cutting-edge IT, design, and marketing
               solutions.
             </p>
+            <div className="mb-4 flex items-center gap-2.5">
+              {socials.map((s, i) => {
+                const Icon = s.icon;
+                return (
+                  <Link key={i} href={s.href} target="_blank" className={cn("text-gray-400 transition-all hover:-translate-y-0.5", s.hover)}>
+                    <Icon size={16} />
+                  </Link>
+                );
+              })}
+            </div>
             <div className="flex gap-3">
               <Link href="https://www.dmca.com/Protection/Status.aspx?ID=7804acab-6c27-454a-b32c-9e5861990358&refurl=https://kriscent.in/index.php" target="_blank">
                 <img src={`${ASSETS_BASE_URL}/tempAssets/dmca.png`} alt="DMCA kriscent" className="h-16 w-16 object-contain" loading="lazy" />
@@ -188,23 +200,10 @@ export default function Footer() {
             ))}
           </div>
 
-          {/* copyright + socials */}
-          <div className="flex items-center gap-4">
-            <p className="text-xs">
-              © 2014 - {isMounted && new Date().getFullYear()} Kriscent | All Rights Reserved.
-            </p>
-            <span className="hidden h-4 w-px bg-white/10 sm:block" />
-            <div className="flex items-center gap-2.5">
-              {socials.map((s, i) => {
-                const Icon = s.icon;
-                return (
-                  <Link key={i} href={s.href} target="_blank" className={cn("text-gray-400 transition-all hover:-translate-y-0.5", s.hover)}>
-                    <Icon size={16} />
-                  </Link>
-                );
-              })}
-            </div>
-          </div>
+          {/* copyright */}
+          <p className="text-xs">
+            © 2014 - {isMounted && new Date().getFullYear()} Kriscent | All Rights Reserved.
+          </p>
         </div>
       </div>
     </footer>

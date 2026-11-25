@@ -13,8 +13,6 @@ import { SectionHeading } from "@/app/ReusableComponents/section-heading";
 import {
   ArrowRight,
   BriefcaseBusinessIcon,
-  Target,
-  Lightbulb,
   Globe,
   Sparkles,
 } from "lucide-react";
@@ -243,7 +241,7 @@ function CaseStudyCard({
 
       <CardContentAnimator>
         {/* ── Left: content ── */}
-        <div className="relative z-10 flex w-full flex-col p-7 text-white md:w-[62%] md:p-10">
+        <div className="relative z-10 flex w-full flex-col p-6 text-white md:w-[62%] md:p-9">
           {/* Oversized index number — now a design element, not a hidden watermark */}
           <span
             aria-hidden="true"
@@ -306,69 +304,9 @@ function CaseStudyCard({
               {study.description}
             </motion.p>
 
-            {/* challenge → solution */}
-            <motion.div
-              className="relative mt-5 hidden grid-cols-[1fr_auto_1fr] items-start gap-5 border-t border-white/10 pt-5 md:grid"
-              initial={{ opacity: 0, y: 14 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.45, delay: 0.2 }}
-            >
-              <div>
-                <div className="mb-2 flex items-center gap-1.5">
-                  <motion.span
-                    className="flex h-5 w-5 items-center justify-center rounded-md bg-white/10 ring-1 ring-white/15"
-                    animate={isInView ? { rotate: [0, 15, -10, 0] } : {}}
-                    transition={{ delay: 0.5, duration: 0.5 }}
-                  >
-                    <Target size={11} className="text-white/80" />
-                  </motion.span>
-                  <span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-white/55">
-                    Challenge
-                  </span>
-                </div>
-                <p className="text-[13.5px] leading-snug text-white/90">
-                  {study.challenge}
-                </p>
-              </div>
-
-              {/* Arrow transition — challenge becomes solution */}
-              <motion.div
-                className="relative flex h-full items-center justify-center pt-5"
-                initial={{ opacity: 0, scale: 0.5 }}
-                animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                transition={{ delay: 0.45, duration: 0.3 }}
-              >
-                <div className="relative flex h-7 w-7 items-center justify-center rounded-full bg-white/10 ring-1 ring-white/20 backdrop-blur-sm">
-                  <ArrowRight size={13} className="text-white/80" />
-                  <span
-                    className="absolute inset-0 rounded-full bg-white/20 blur-md"
-                    aria-hidden="true"
-                  />
-                </div>
-              </motion.div>
-
-              <div>
-                <div className="mb-2 flex items-center gap-1.5">
-                  <motion.span
-                    className="flex h-5 w-5 items-center justify-center rounded-md bg-white/10 ring-1 ring-white/15"
-                    animate={isInView ? { rotate: [0, -15, 10, 0] } : {}}
-                    transition={{ delay: 0.6, duration: 0.5 }}
-                  >
-                    <Lightbulb size={11} className="text-white/80" />
-                  </motion.span>
-                  <span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-white/55">
-                    Solution
-                  </span>
-                </div>
-                <p className="text-[13.5px] leading-snug text-white/90">
-                  {study.solution}
-                </p>
-              </div>
-            </motion.div>
-
             {/* metrics — now a glass panel */}
             <motion.div
-              className="relative mt-5 flex items-stretch overflow-hidden rounded-2xl border border-white/10 bg-white/[0.06] p-4 backdrop-blur-sm"
+              className="relative mt-4 flex items-stretch overflow-hidden rounded-2xl border border-white/10 bg-white/[0.06] p-4 backdrop-blur-sm"
               variants={metricStagger}
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
@@ -400,7 +338,7 @@ function CaseStudyCard({
 
             {/* CTA */}
             <motion.div
-              className="mt-5 flex items-center justify-between"
+              className="mt-4 flex items-center justify-between"
               initial={{ opacity: 0 }}
               animate={isInView ? { opacity: 1 } : {}}
               transition={{ delay: 0.4, duration: 0.35 }}
@@ -440,41 +378,34 @@ function CaseStudyCard({
           </div>
         </div>
 
-        {/* ── Right: image ── */}
-        <div className="absolute right-0 top-0 hidden h-full w-[38%] overflow-hidden md:block">
+        {/* ── Full-card background image ── */}
+        <div className="pointer-events-none absolute inset-0 overflow-hidden">
           <motion.img
             src={study.image}
             alt={study.description}
-            className="h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.06]"
+            className="h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.04]"
             loading="lazy"
             initial={{ scale: 1.1, opacity: 0 }}
             animate={isInView ? { scale: 1, opacity: 1 } : {}}
             transition={{ duration: 0.8, delay: 0.1 }}
           />
 
-          {/* Gradient fade from card color into image — removes hard seam */}
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute inset-y-0 left-0 w-32"
-            style={{
-              background: `linear-gradient(to right, ${study.color} 0%, ${study.color}00 100%)`,
-            }}
-          />
-
-          {/* Soft vignette darkening at edges for depth */}
+          {/* Left gradient for text readability — fades from card color into the image */}
           <div
             aria-hidden="true"
             className="pointer-events-none absolute inset-0"
             style={{
-              background:
-                "radial-gradient(120% 100% at 50% 50%, transparent 55%, rgba(0,0,0,0.35) 100%)",
+              background: `linear-gradient(to right, ${study.color} 0%, ${study.color} 38%, ${study.color}00 70%)`,
             }}
           />
 
-          {/* Subtle top sheen */}
+          {/* Subtle overall darkening for depth */}
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-white/10 to-transparent"
+            className="pointer-events-none absolute inset-0"
+            style={{
+              background: "radial-gradient(120% 100% at 50% 50%, transparent 55%, rgba(0,0,0,0.3) 100%)",
+            }}
           />
         </div>
       </CardContentAnimator>

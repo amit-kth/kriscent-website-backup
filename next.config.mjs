@@ -9,7 +9,10 @@ const nextConfig = {
     },
     allowedDevOrigins: ["192.168.1.*"],
     output: 'export',
-    trailingSlash: true
+    trailingSlash: true,
+    experimental: {
+        agentUpgrade: "security",
+    }
 };
 
 export default nextConfig; 

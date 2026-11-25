@@ -70,30 +70,48 @@ export const MenuItem = ({
 
     const isOpen = active === item && isHovering;
 
+    // External URLs (separate sites) open in a new tab; internal links keep
+    // client-side routing in the current tab.
+    const isExternal = target && /^https?:\/\//i.test(target);
+
     return (
         <div
             ref={menuRef}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             className="relative"
-            onClick={() => { target && router.push(target) }}
+            onClick={() => { target && !isExternal && router.push(target) }}
         >
             <motion.div
                 transition={{ duration: 0.3 }}
                 className={scrolled || !isHome ? navLinksVariants.navLinks.offHome : navLinksVariants.navLinks.onHome}
             >
                 {/* main link title */}
-                <Link href={target || ""} className="flex gap-1 items-center text-nowrap">
-                    {item}
-                    {children && (
-                        <ChevronDown
-                            className={cn(
-                                "size-3.5 transition-transform duration-300",
-                                isOpen && "rotate-180"
-                            )}
-                        />
-                    )}
-                </Link>
+                {isExternal ? (
+                    <a href={target} target="_blank" rel="noopener noreferrer" className="flex gap-1 items-center text-nowrap">
+                        {item}
+                        {children && (
+                            <ChevronDown
+                                className={cn(
+                                    "size-3.5 transition-transform duration-300",
+                                    isOpen && "rotate-180"
+                                )}
+                            />
+                        )}
+                    </a>
+                ) : (
+                    <Link href={target || ""} className="flex gap-1 items-center text-nowrap">
+                        {item}
+                        {children && (
+                            <ChevronDown
+                                className={cn(
+                                    "size-3.5 transition-transform duration-300",
+                                    isOpen && "rotate-180"
+                                )}
+                            />
+                        )}
+                    </Link>
+                )}
 
                 {/* hovering small dot below the link */}
                 {isOpen && <div className={`w-4 h-1 rounded-full absolute bottom-2 left-1/2 -translate-x-1/2 ${scrolled ? "bg-white" : "bg-primary"}`}></div>}

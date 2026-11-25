@@ -34,6 +34,7 @@ export interface SiteMetadata {
     faqPage: PageMetadata;
     kirpPage: PageMetadata;
     portfolioPage: PageMetadata;
+    caseStudiesPage: PageMetadata;
     technologiesPage: PageMetadata;
     testimonialsPage: PageMetadata;
     gameDevPage: PageMetadata;
@@ -61,8 +62,8 @@ export const ASSETS_BASE_URL = "https://ik.imagekit.io/qk2ww553c"
 // custom titles, desc and keywords for each page in the website.
 export const metadata: SiteMetadata = {
     indexPage: {
-        title: "Kriscent - Trusted One-Stop Destination for IT Solutions",
-        description: "Kriscent is CMMI Level 3 approved, provides IT services like web development, software solutions, and digital marketing. Serving India, UK, Dubai & beyond.",
+        title: "Kriscent | AI-First IT Solutions for Global Businesses",
+        description: "Kriscent delivers AI-first IT solutions for global businesses, including web & app development, software solutions, digital marketing, and AI/ML. CMMI Level 3 certified, serving India, UK, Dubai & beyond.",
         keywords: "IT services, web development India, software development Dubai, digital marketing USA, IT solutions for business growth, CMMI Level 3 certified company, IT services in India, digital marketing Australia, web development for startups",
         ogImage: `${ASSETS_BASE_URL}/tempAssets/OgImages/demo/home.png?updatedAt=1737552601923`,
         ogUrl: "https://www.kriscent.in",
@@ -216,6 +217,13 @@ export const metadata: SiteMetadata = {
         keywords: "IT portfolio, case studies, successful projects, software solutions, web development portfolio, IT services USA, digital solutions UK",
         ogImage: `${ASSETS_BASE_URL}/tempAssets/OgImages/demo/home.png?updatedAt=1737552601923`,
         ogUrl: "https://www.kriscent.in/portfolio"
+    },
+    caseStudiesPage: {
+        title: "Case Studies | IT Projects & Success Stories | Kriscent",
+        description: "Explore Kriscent's case studies — success stories across web, mobile, software, and digital marketing for clients worldwide.",
+        keywords: "case studies, IT case studies, software case studies, client success stories, web development case studies, digital marketing case studies, Kriscent projects, portfolio case studies",
+        ogImage: `${ASSETS_BASE_URL}/tempAssets/OgImages/demo/home.png?updatedAt=1737552601923`,
+        ogUrl: "https://www.kriscent.in/case-studies"
     },
     technologiesPage: {
         title: "Technologies | Kriscent Techno Hub",

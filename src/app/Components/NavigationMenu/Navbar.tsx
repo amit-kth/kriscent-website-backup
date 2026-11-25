@@ -5,7 +5,8 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { useMediaQuery } from "react-responsive";
-import { ChevronDown, Contact, MenuIcon, UsersRound } from "lucide-react";
+import { ChevronDown, Contact, MenuIcon, UsersRound, Rss, BriefcaseBusiness } from "lucide-react";
+import { IconBrandWhatsapp } from "@tabler/icons-react";
 
 import { Menu, MenuItem } from "@/components/ui/navbar-menu";
 import { Button } from "@/components/ui/button";
@@ -20,6 +21,7 @@ import {
 } from "./navbarConfigs";
 import ServicesContent from "./service-card";
 import WhyKriscent from "./why-kriscent";
+import InsightsContent from "./insights-card";
 
 // in the mentioned paths, the navbar will be transparent when scrolled to the top of the page. Otherwise, it will have a solid background.
 const transparentNavbarPaths = ["/", "/hire-talent/", "/ai-solutions/"];
@@ -155,11 +157,21 @@ function NavbarLinks({ className, scrolled, isHome }: { className?: string, scro
 
         </MenuItem>
 
+        {/* external kriscent.com link ------------------------------- */}
+        <MenuItem setActive={setActive} active={active} scrolled={scrolled} isHome={isHome} item={"Products"} target={"https://kriscent.com/"} />
+
         {/* Portfolio manu link ------------------------------- */}
         <MenuItem setActive={setActive} active={active} scrolled={scrolled} isHome={isHome} item={PortfolioLinksConfig.linkTitle} target={PortfolioLinksConfig.target} />
 
-        {/* Portfolio manu link ------------------------------- */}
-        <MenuItem setActive={setActive} active={active} scrolled={scrolled} isHome={isHome} item={"Blog"} target={"https://kriscent.in/blog"} />
+        {/* Insights menu link (replaces Blog) ------------------------------- */}
+        <MenuItem setActive={setActive} active={active} scrolled={scrolled} isHome={isHome} item={"Insights"}>
+          {/* insights submenu  ------------------------------- */}
+          <div className="w-full flex h-fit gap-3">
+            <div className="p-2 bg-white backdrop-blue-lg shadow-2xl h-fit overflow-hidden rounded-4xl w-[100%]">
+              <InsightsContent />
+            </div>
+          </div>
+        </MenuItem>
 
         {/* contact manu link ------------------------------- */}
         <MenuItem setActive={setActive} active={active} scrolled={scrolled} isHome={isHome} item={"Contact"} target="/contact" />
@@ -169,6 +181,16 @@ function NavbarLinks({ className, scrolled, isHome }: { className?: string, scro
         <Button variant="secondary" className="h-8 px-2 cursor-pointer">
           HIRE TALENT
         </Button>
+      </Link>
+
+      <Link
+        href="https://wa.me/918947027625"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="WhatsApp enquiry"
+        className="group inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#0CAA41] text-white shadow-lg shadow-[#0CAA41]/30 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#0CAA41]/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+      >
+        <IconBrandWhatsapp size={20} className="transition-transform duration-300 group-hover:scale-105" />
       </Link>
 
     </div>
@@ -235,6 +257,28 @@ function MobileNavLinks({ setIsOpen }: { setIsOpen: (isOpen: boolean) => void })
         setIsOpen={setIsOpen}
       />
 
+      {/* Insights Links */}
+      <MobileMenuItem
+        title="Insights"
+        icon={<Rss className="h-4 w-4" />}
+        setIsOpen={setIsOpen}
+      >
+        <motion.div className="ml-4 text-gray-600 flex flex-col gap-2 bg-white">
+          <MobileMenuItem
+            title="Case Studies"
+            icon={<BriefcaseBusiness className="h-4 w-4" />}
+            target="/case-studies"
+            setIsOpen={setIsOpen}
+          />
+          <MobileMenuItem
+            title="Blog"
+            icon={<Rss className="h-4 w-4" />}
+            target="https://kriscent.in/blog"
+            setIsOpen={setIsOpen}
+          />
+        </motion.div>
+      </MobileMenuItem>
+
       {/* Career Link */}
       <MobileMenuItem
         title="Career"
@@ -258,9 +302,24 @@ function MobileNavLinks({ setIsOpen }: { setIsOpen: (isOpen: boolean) => void })
       >
         <Button
           className="w-[90%] bg-primary text-white hover:bg-primary/90 mt-4
-                       transition-all duration-300 hover:scale-105 active:scale-95"
+                     transition-all duration-300 hover:scale-105 active:scale-95"
         >
           Hire Talent
+        </Button>
+      </Link>
+
+      <Link
+        className="w-full flex justify-center"
+        href="https://wa.me/918947027625"
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={() => setIsOpen(false)}
+      >
+        <Button
+          className="w-[90%] bg-[#0CAA41] text-white hover:bg-[#0CAA41]/90 mt-4
+                     transition-all duration-300 hover:scale-105 active:scale-95"
+        >
+          <IconBrandWhatsapp size={18} className="mr-2" /> WhatsApp Enquiry
         </Button>
       </Link>
     </motion.div>
