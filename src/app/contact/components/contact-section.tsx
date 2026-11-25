@@ -2,10 +2,10 @@
 
 import { SectionHeading } from '@/app/ReusableComponents/section-heading'; 
 import { Mail, MapPin, MessageCircle, Phone } from 'lucide-react'
-import { FadeDownToUpAnimation } from '@/app/ReusableComponents/UI'
+import { FadeDownToUpAnimation, DefaultButton } from '@/app/ReusableComponents/UI'
 import React, { useEffect, useState } from 'react'
 import ContactForm from './contact-form'
-import { IconBrandSkype } from '@tabler/icons-react';
+import { IconBrandSkype, IconBrandWhatsapp } from '@tabler/icons-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { WorldMapDemo } from './world-map';
@@ -144,7 +144,27 @@ const ContactSection = () => {
                             </div>
                         </div>
                     </div>
+
                 </div>}
+                {/* WhatsApp Enquiry CTA */}
+                <div className="mt-3 flex flex-col items-center justify-between gap-4 rounded-lg p-5 md:p-6 sm:flex-row" style={{ backgroundColor: `#0CAA4110` }}>
+                    <div className="flex items-center gap-4">
+                        <div className="rounded-full p-2.5 shrink-0" style={{ backgroundColor: `#0CAA4130` }}>
+                            <IconBrandWhatsapp className="w-6 h-6 md:w-5 md:h-5 text-white brightness-90" style={{ color: `#0CAA41` }} />
+                        </div>
+                        <div className="text-left">
+                            <h3 className="font-semibold text-base md:text-sm text-[#0CAA41]">WhatsApp Enquiry</h3>
+                            <p className="text-sm md:text-xs text-[#0CAA41]">Chat with us on WhatsApp — +91 8947027625</p>
+                        </div>
+                    </div>
+                    <Link href="https://wa.me/918947027625" target="_blank" rel="noopener noreferrer">
+                        <DefaultButton
+                            title="Start Chat"
+                            icon={IconBrandWhatsapp}
+                            customColor="bg-[#0CAA41] text-white hover:bg-[#0CAA41]/90"
+                        />
+                    </Link>
+                </div>
                 <WorldMapDemo />
             </div>
 

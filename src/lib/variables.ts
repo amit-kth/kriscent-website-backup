@@ -34,6 +34,7 @@ export interface SiteMetadata {
     faqPage: PageMetadata;
     kirpPage: PageMetadata;
     portfolioPage: PageMetadata;
+    caseStudiesPage: PageMetadata;
     technologiesPage: PageMetadata;
     testimonialsPage: PageMetadata;
     gameDevPage: PageMetadata;
@@ -216,6 +217,13 @@ export const metadata: SiteMetadata = {
         keywords: "IT portfolio, case studies, successful projects, software solutions, web development portfolio, IT services USA, digital solutions UK",
         ogImage: `${ASSETS_BASE_URL}/tempAssets/OgImages/demo/home.png?updatedAt=1737552601923`,
         ogUrl: "https://www.kriscent.in/portfolio"
+    },
+    caseStudiesPage: {
+        title: "Case Studies | IT Projects & Success Stories | Kriscent",
+        description: "Explore Kriscent's case studies — success stories across web, mobile, software, and digital marketing for clients worldwide.",
+        keywords: "case studies, IT case studies, software case studies, client success stories, web development case studies, digital marketing case studies, Kriscent projects, portfolio case studies",
+        ogImage: `${ASSETS_BASE_URL}/tempAssets/OgImages/demo/home.png?updatedAt=1737552601923`,
+        ogUrl: "https://www.kriscent.in/case-studies"
     },
     technologiesPage: {
         title: "Technologies | Kriscent Techno Hub",
