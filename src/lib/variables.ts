@@ -63,7 +63,7 @@ export const ASSETS_BASE_URL = "https://ik.imagekit.io/qk2ww553c"
 export const metadata: SiteMetadata = {
     indexPage: {
         title: "Kriscent | AI-First IT Solutions for Global Businesses",
-        description: "Kriscent delivers AI-first IT solutions for global businesses — web & app development, software solutions, digital marketing, and AI/ML. CMMI Level 3 certified, serving India, UK, Dubai & beyond.",
+        description: "Kriscent delivers AI-first IT solutions for global businesses, including web & app development, software solutions, digital marketing, and AI/ML. CMMI Level 3 certified, serving India, UK, Dubai & beyond.",
         keywords: "IT services, web development India, software development Dubai, digital marketing USA, IT solutions for business growth, CMMI Level 3 certified company, IT services in India, digital marketing Australia, web development for startups",
         ogImage: `${ASSETS_BASE_URL}/tempAssets/OgImages/demo/home.png?updatedAt=1737552601923`,
         ogUrl: "https://www.kriscent.in",

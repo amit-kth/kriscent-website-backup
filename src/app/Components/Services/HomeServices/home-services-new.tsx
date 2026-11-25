@@ -128,7 +128,7 @@ export default function ServicesShowcase() {
         <SectionHeading
           primaryHeading="What IT services does Kriscent offer?" // AEO: Direct question format
           secondaryHeading="What we do"
-          description="Kriscent offers four core services: AI & ML development, software development, digital marketing, and dedicated hire-a-resource teams — each structured for measurable business outcomes." // AEO: Fact-first direct answer listing everything
+          description="Kriscent offers four core services: AI & ML development, software development, digital marketing, and dedicated hire-a-resource teams. Each is structured for measurable business outcomes." // AEO: Fact-first direct answer listing everything
           highlightedString="IT services"
           icon={BriefcaseBusiness}
           className="mb-0"
