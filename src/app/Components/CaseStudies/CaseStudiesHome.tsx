@@ -378,41 +378,34 @@ function CaseStudyCard({
           </div>
         </div>
 
-        {/* ── Right: image ── */}
-        <div className="absolute right-0 top-0 hidden h-full w-[38%] overflow-hidden md:block">
+        {/* ── Full-card background image ── */}
+        <div className="pointer-events-none absolute inset-0 overflow-hidden">
           <motion.img
             src={study.image}
             alt={study.description}
-            className="h-full w-full object-contain transition-transform duration-[900ms] ease-out group-hover:scale-[1.05]"
+            className="h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.04]"
             loading="lazy"
             initial={{ scale: 1.1, opacity: 0 }}
             animate={isInView ? { scale: 1, opacity: 1 } : {}}
             transition={{ duration: 0.8, delay: 0.1 }}
           />
 
-          {/* Gradient fade from card color into image — removes hard seam */}
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute inset-y-0 left-0 w-32"
-            style={{
-              background: `linear-gradient(to right, ${study.color} 0%, ${study.color}00 100%)`,
-            }}
-          />
-
-          {/* Soft vignette darkening at edges for depth */}
+          {/* Left gradient for text readability — fades from card color into the image */}
           <div
             aria-hidden="true"
             className="pointer-events-none absolute inset-0"
             style={{
-              background:
-                "radial-gradient(120% 100% at 50% 50%, transparent 55%, rgba(0,0,0,0.35) 100%)",
+              background: `linear-gradient(to right, ${study.color} 0%, ${study.color} 38%, ${study.color}00 70%)`,
             }}
           />
 
-          {/* Subtle top sheen */}
+          {/* Subtle overall darkening for depth */}
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-white/10 to-transparent"
+            className="pointer-events-none absolute inset-0"
+            style={{
+              background: "radial-gradient(120% 100% at 50% 50%, transparent 55%, rgba(0,0,0,0.3) 100%)",
+            }}
           />
         </div>
       </CardContentAnimator>
