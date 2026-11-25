@@ -158,7 +158,7 @@ function NavbarLinks({ className, scrolled, isHome }: { className?: string, scro
         </MenuItem>
 
         {/* external kriscent.com link ------------------------------- */}
-        <MenuItem setActive={setActive} active={active} scrolled={scrolled} isHome={isHome} item={"Kriscent.com"} target={"https://kriscent.com/"} />
+        <MenuItem setActive={setActive} active={active} scrolled={scrolled} isHome={isHome} item={"Products"} target={"https://kriscent.com/"} />
 
         {/* Portfolio manu link ------------------------------- */}
         <MenuItem setActive={setActive} active={active} scrolled={scrolled} isHome={isHome} item={PortfolioLinksConfig.linkTitle} target={PortfolioLinksConfig.target} />

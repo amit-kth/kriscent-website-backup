@@ -37,7 +37,7 @@ const insightCards: InsightCard[] = [
 
 export default function InsightsContent() {
   return (
-    <div className="grid gap-2 rounded-4xl bg-background p-2 text-sm lg:grid-cols-2">
+    <div className="grid gap-2 lg:grid-cols-2">
       {insightCards.map((card) => (
         <InsightCardItem key={card.title} card={card} />
       ))}
